@@ -400,7 +400,7 @@ End Function
 '进入第i行结果
 '''''''''''''''''''''''''''''''''''''''''''''''''
 Function enterResult(i)
-	resultTag = "tag:A&txt:已开奖&index:" + CStr(i - 1)
+	resultTag = "tag:A&txt:已揭晓&index:" + CStr(i - 1)
 	waitTagExists(resultTag)
 	Call Plugin.Web.HtmlClick(resultTag)
 End Function
@@ -564,7 +564,7 @@ Sub TestMain()
 	FIRST_ODD_COLUMN = FIRST_NUM_COLUMN + 5
 	END_NUM = getEndNum()
 	Call InitPage()
-	For page = 2 To 25
+	For page = 16 To 25
 		arr = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 		Delay 2000
 		moveToPage (page)
@@ -575,14 +575,14 @@ Sub TestMain()
 			 	Goto 结束
 			End If
 			Delay 200
-			''allThreeNum = getAllThreeNumOfRow(pageRow)
+			allThreeNum = getAllThreeNumOfRow(pageRow)
 			garbage = writeToExcel(1, 2, STAGE_COLUMN, stageNum)
-			''firstNum = allThreeNum(0)
-			''garbage = writeToExcel(1,2,FIRST_NUM_COLUMN,firstNum)
-			''secondNum = allThreeNum(1)
-			''garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 1, secondNum)
-			''thridNum = allThreeNum(2)
-			''garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 2, thridNum)
+			firstNum = allThreeNum(0)
+			garbage = writeToExcel(1,2,FIRST_NUM_COLUMN,firstNum)
+			secondNum = allThreeNum(1)
+			garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 1, secondNum)
+			thridNum = allThreeNum(2)
+			garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 2, thridNum)
 			''sumNum = CInt(Left(firstNum,1)) + CInt(Left(secondNum,1)) + CInt(Left(thridNum,1))
 			''garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 3, sumNum)
 			enterResult (pageRow)
@@ -598,3 +598,79 @@ Sub TestMain()
 	Next
 	Rem 结束
 End Sub
+
+Function getTheWhoolRowInf(pageRow)
+	STAGE_COLUMN = 1
+	FIRST_NUM_COLUMN = STAGE_COLUMN + 1
+	FIRST_ODD_COLUMN = FIRST_NUM_COLUMN + 5
+	END_NUM = getEndNum()
+	arr = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+	stageNum = getRowNum(pageRow)
+		If (CStr(stageNum) = CStr(END_NUM) Or stageNum = ""Or stageNum = " ") Then 
+		 	Goto 结束
+		End If
+	Delay 200
+	allThreeNum = getAllThreeNumOfRow(pageRow)
+	garbage = writeToExcel(1, 2, STAGE_COLUMN, stageNum)
+	firstNum = allThreeNum(0)
+	garbage = writeToExcel(1,2,FIRST_NUM_COLUMN,firstNum)
+	secondNum = allThreeNum(1)
+	garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 1, secondNum)
+	thridNum = allThreeNum(2)
+	garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 2, thridNum)
+	''sumNum = CInt(Left(firstNum,1)) + CInt(Left(secondNum,1)) + CInt(Left(thridNum,1))
+	''garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 3, sumNum)
+	enterResult (pageRow)
+	Delay 200
+	arr = getAllOdds(arr)
+	For i = 0 To 27
+		garbage = writeToExcel(1,2,FIRST_ODD_COLUMN + i,arr(i))
+	Next
+	Call goBack()
+	garbage = excelInsertRow(1, 2)
+	Delay 500
+	Rem 结束
+End Function
+
+Sub AddLostData()
+	Call openExcel()
+	STAGE_COLUMN = 1
+	FIRST_NUM_COLUMN = STAGE_COLUMN + 1
+	FIRST_ODD_COLUMN = FIRST_NUM_COLUMN + 5
+	If Form1.InputBox3.Text = "" Then
+		MsgBox "填入信息为空"
+		Goto 结束
+	End If
+	lostDataNum = CInt(Right(Form1.InputBox3.Text, 4))
+	Call InitPage()
+	moveToPage (2)
+	stageNum = getRowNum(1)
+	secondPageFirstRowNum = CInt(Right(stageNum, 4))
+	internal = secondPageFirstRowNum - lostDataNum
+	addRow = internal Mod 20
+	If addRow > 20 Then 
+		MsgBox "填补信息行数错误"
+		Goto 结束
+	End If
+	addPage = (internal - addRow) / 20
+	If addPage > 25 Then 
+		MsgBox "填补信息页数错误"
+		Goto 结束
+	End If
+	moveToPage (2 + addPage)
+	getTheWhoolRowInf (1 + addRow)
+	Rem 结束
+End Sub
+
+Event Form1.Button3.Click
+	Call AddLostData()
+End Event
+Event Form1.Label3.Click
+
+End Event
+Event Form1.InputBox3.Change
+
+End Event
+Event Form1.InputBox1.Change
+
+End Event

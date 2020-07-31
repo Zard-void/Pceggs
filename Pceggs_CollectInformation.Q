@@ -23,7 +23,7 @@ SetupOCXFile=
 [Comment]
 
 [UIPackage]
-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
+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
 
 
 [Script]
@@ -429,7 +429,7 @@ End Function
 '进入第i行结果
 '''''''''''''''''''''''''''''''''''''''''''''''''
 Function enterResult(i)
-	resultTag = "tag:A&txt:已开奖&index:" + CStr(i - 1)
+	resultTag = "tag:A&txt:已揭晓&index:" + CStr(i - 1)
 	waitTagExists(resultTag)
 	Call Plugin.Web.HtmlClick(resultTag)
 End Function
@@ -593,7 +593,7 @@ Sub TestMain()
 	FIRST_ODD_COLUMN = FIRST_NUM_COLUMN + 5
 	END_NUM = getEndNum()
 	Call InitPage()
-	For page = 2 To 25
+	For page = 16 To 25
 		arr = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 		Delay 2000
 		moveToPage (page)
@@ -604,14 +604,14 @@ Sub TestMain()
 			 	Goto 结束
 			End If
 			Delay 200
-			''allThreeNum = getAllThreeNumOfRow(pageRow)
+			allThreeNum = getAllThreeNumOfRow(pageRow)
 			garbage = writeToExcel(1, 2, STAGE_COLUMN, stageNum)
-			''firstNum = allThreeNum(0)
-			''garbage = writeToExcel(1,2,FIRST_NUM_COLUMN,firstNum)
-			''secondNum = allThreeNum(1)
-			''garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 1, secondNum)
-			''thridNum = allThreeNum(2)
-			''garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 2, thridNum)
+			firstNum = allThreeNum(0)
+			garbage = writeToExcel(1,2,FIRST_NUM_COLUMN,firstNum)
+			secondNum = allThreeNum(1)
+			garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 1, secondNum)
+			thridNum = allThreeNum(2)
+			garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 2, thridNum)
 			''sumNum = CInt(Left(firstNum,1)) + CInt(Left(secondNum,1)) + CInt(Left(thridNum,1))
 			''garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 3, sumNum)
 			enterResult (pageRow)
@@ -627,3 +627,79 @@ Sub TestMain()
 	Next
 	Rem 结束
 End Sub
+
+Function getTheWhoolRowInf(pageRow)
+	STAGE_COLUMN = 1
+	FIRST_NUM_COLUMN = STAGE_COLUMN + 1
+	FIRST_ODD_COLUMN = FIRST_NUM_COLUMN + 5
+	END_NUM = getEndNum()
+	arr = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+	stageNum = getRowNum(pageRow)
+		If (CStr(stageNum) = CStr(END_NUM) Or stageNum = ""Or stageNum = " ") Then 
+		 	Goto 结束
+		End If
+	Delay 200
+	allThreeNum = getAllThreeNumOfRow(pageRow)
+	garbage = writeToExcel(1, 2, STAGE_COLUMN, stageNum)
+	firstNum = allThreeNum(0)
+	garbage = writeToExcel(1,2,FIRST_NUM_COLUMN,firstNum)
+	secondNum = allThreeNum(1)
+	garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 1, secondNum)
+	thridNum = allThreeNum(2)
+	garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 2, thridNum)
+	''sumNum = CInt(Left(firstNum,1)) + CInt(Left(secondNum,1)) + CInt(Left(thridNum,1))
+	''garbage = writeToExcel(1, 2, FIRST_NUM_COLUMN + 3, sumNum)
+	enterResult (pageRow)
+	Delay 200
+	arr = getAllOdds(arr)
+	For i = 0 To 27
+		garbage = writeToExcel(1,2,FIRST_ODD_COLUMN + i,arr(i))
+	Next
+	Call goBack()
+	garbage = excelInsertRow(1, 2)
+	Delay 500
+	Rem 结束
+End Function
+
+Sub AddLostData()
+	Call openExcel()
+	STAGE_COLUMN = 1
+	FIRST_NUM_COLUMN = STAGE_COLUMN + 1
+	FIRST_ODD_COLUMN = FIRST_NUM_COLUMN + 5
+	If Form1.InputBox3.Text = "" Then
+		MsgBox "填入信息为空"
+		Goto 结束
+	End If
+	lostDataNum = CInt(Right(Form1.InputBox3.Text, 4))
+	Call InitPage()
+	moveToPage (2)
+	stageNum = getRowNum(1)
+	secondPageFirstRowNum = CInt(Right(stageNum, 4))
+	internal = secondPageFirstRowNum - lostDataNum
+	addRow = internal Mod 20
+	If addRow > 20 Then 
+		MsgBox "填补信息行数错误"
+		Goto 结束
+	End If
+	addPage = (internal - addRow) / 20
+	If addPage > 25 Then 
+		MsgBox "填补信息页数错误"
+		Goto 结束
+	End If
+	moveToPage (2 + addPage)
+	getTheWhoolRowInf (1 + addRow)
+	Rem 结束
+End Sub
+
+Event Form1.Button3.Click
+	Call AddLostData()
+End Event
+Event Form1.Label3.Click
+
+End Event
+Event Form1.InputBox3.Change
+
+End Event
+Event Form1.InputBox1.Change
+
+End Event
