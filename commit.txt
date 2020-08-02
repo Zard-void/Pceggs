@@ -1,4 +1,4 @@
-Pceggs : Support the function of adding lost data
+Pceggs : Daily Update
 
-Data : 2020.08.01
-Description : Support the function of adding lost data
+Data : 2020.08.03
+Description : Daily Update
