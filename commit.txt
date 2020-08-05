@@ -1,4 +1,4 @@
-Pceggs : Support the calculating of profit
+Pceggs : Daliy Update
 
-Data : 2020.08.04
-Description : Support the calculating of profit
+Data : 2020.08.06
+Description : Daliy Update
