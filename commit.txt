@@ -1,4 +1,4 @@
-Pceggs : Daliy Update
+Pceggs : Create the statistics of voted date.
 
-Data : 2020.08.13
-Description : Daliy Update，problem has been solved.
+Data : 2020.08.14
+Description : Create the statistics of voted date,the ratio between the normal counts and  hit counts is different.
