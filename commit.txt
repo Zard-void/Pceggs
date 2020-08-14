@@ -1,4 +1,4 @@
-Pceggs : Create the statistics of voted date.
+Pceggs : Daily Update
 
 Data : 2020.08.14
-Description : Create the statistics of voted date,the ratio between the normal counts and  hit counts is different.
+Description : Daily Update
