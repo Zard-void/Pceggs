@@ -1,4 +1,5 @@
-Pceggs : Daily Update and create the spider of pceggs by Python
+Pceggs : Daily Update and strength the spider
 
-Data : 2020.08.16
-Description : Support the spider to open the website and login in.
+Data : 2020.08.17
+Description : Support the handle of Exception for spider.
+              Support more safe method to find element.
