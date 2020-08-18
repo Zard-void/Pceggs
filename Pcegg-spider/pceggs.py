@@ -23,6 +23,9 @@ def login(driver):
     vercode_str = input("请输入验证码:\n")
     vercode.send_keys(vercode_str)
 
+    loginWay = findObjSafely(driver,'id','LoginWay')
+    loginWay.click()
+
     click_button = findObjSafely(driver,'name','Login_Submit')
     click_button.click()
     time.sleep(5)
@@ -30,11 +33,15 @@ def login(driver):
     return cur_cookies
 
 def findObjSafely(driver,type,str):
-    waitForObjExist(driver,type,str)
-    if(type == 'name'):
-        return driver.find_element_by_name(str)
-    elif(type == 'id'):
-        return driver.find_element_by_id(str)
+    if(waitForObjExist(driver,type,str)):
+        if(type == 'name'):
+            return driver.find_element_by_name(str)
+        elif(type == 'id'):
+            return driver.find_element_by_id(str)
+        elif(type == 'tag_name'):
+            return driver.find_element_by_tag_name(str)
+    else:
+        return None
 
 
 
@@ -54,6 +61,14 @@ def isObjExist(driver, type, str):
             return False
         else:
             return True
+    elif type == 'tag_name':
+        try:
+            boj = driver.find_element_by_tag_name(str)
+        except NoSuchElementException:
+            return False
+        else:
+            return True
+
 def Test():
     driver = webdriver.Chrome()
     url = 'http://www.pceggs.com/'
@@ -81,11 +96,14 @@ def waitForObjExist(driver,type,str):
         if tickFor1S >= waitTime:
             raise Exception(type + '不存在')
     except:
-            handleObjExistErr()
+        return False
+    return True
 
-def handleObjExistErr():
+
+def moveToStartPage(driver):
+    driver.get("http://www.pceggs.com/play/playIndex.aspx")
+    driver.get("http://www.pceggs.com/play/pxya.aspx")
     return
-
 
 if __name__ == '__main__':
     driver = webdriver.Chrome()
@@ -93,4 +111,8 @@ if __name__ == '__main__':
     driver.get(url)
     if not isLogin(driver):
         login(driver)
-
+    moveToStartPage(driver)
+    table = findObjSafely(driver,'id','panel')
+    trlist = table.find_elements_by_tag_name('tr')
+    print(len(trlist))
+    print(len(trlist))

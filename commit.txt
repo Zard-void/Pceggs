@@ -1,5 +1,6 @@
 Pceggs : Daily Update and strength the spider
 
-Data : 2020.08.17
-Description : Support the handle of Exception for spider.
-              Support more safe method to find element.
+Data : 2020.08.19
+Description : Delete the handle of Exception for spider.
+              Support the GUI.
+              Support the login in and move to the start page.
