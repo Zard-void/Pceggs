@@ -1,6 +1,6 @@
 import time
 from selenium import webdriver
-
+import json
 
 def login(driver):
     acount_num = 'qq850224169'
@@ -29,8 +29,12 @@ def login(driver):
     click_button = findObjSafely(driver,'name','Login_Submit')
     click_button.click()
     time.sleep(5)
-    cur_cookies = driver.get_cookies()[0]
-    return cur_cookies
+    curCookies = driver.get_cookies()
+    jsonCookies = json.dumps(curCookies)
+
+    with open('cookies.txt', 'w') as cookief:
+        cookief.write(jsonCookies)
+    return curCookies
 
 def findObjSafely(driver,type,str):
     if(waitForObjExist(driver,type,str)):
@@ -69,12 +73,7 @@ def isObjExist(driver, type, str):
         else:
             return True
 
-def Test():
-    driver = webdriver.Chrome()
-    url = 'http://www.pceggs.com/'
-    driver.get(url)
-    existance = isObjExist(driver, 'name', 'txt_UserName')
-    print(existance)
+
 
 def isLogin(driver):
     tickFor1S = 0
@@ -105,14 +104,39 @@ def moveToStartPage(driver):
     driver.get("http://www.pceggs.com/play/pxya.aspx")
     return
 
-if __name__ == '__main__':
+def loginWithCookie(driver):
+    driver.delete_all_cookies()
+    with open('cookies.txt', 'r', encoding='utf8') as f:
+        listCookies = json.loads(f.read())
+        print(listCookies)
+    for cookie in listCookies:
+        driver.add_cookie(cookie)
+    driver.refresh()
+    return
+
+def Test():
     driver = webdriver.Chrome()
     url = 'http://www.pceggs.com/'
     driver.get(url)
-    if not isLogin(driver):
-        login(driver)
-    moveToStartPage(driver)
-    table = findObjSafely(driver,'id','panel')
-    trlist = table.find_elements_by_tag_name('tr')
-    print(len(trlist))
-    print(len(trlist))
+
+
+
+if __name__ == '__main__':
+    if(1):
+        driver = webdriver.Chrome()
+        url = 'http://www.pceggs.com/'
+        driver.get(url)
+        if not isLogin(driver):
+            loginWithCookie(driver)
+        moveToStartPage(driver)
+        table = findObjSafely(driver,'id','panel')
+        trlist = table.find_elements_by_tag_name('tr')
+        print(len(trlist))
+        for row in trlist:
+            #遍历行对象，获取每一个行中所有的列对象
+            tdlist = row.find_elements_by_tag_name('td')
+            for col in tdlist:
+                print(col.text + '\t', end='')
+            print('\n')
+    else:
+        Test()

@@ -1,6 +1,4 @@
 Pceggs : Daily Update and strength the spider
 
-Data : 2020.08.19
-Description : Delete the handle of Exception for spider.
-              Support the GUI.
-              Support the login in and move to the start page.
+Data : 2020.08.20
+Description : Support to login the website with cookies.
