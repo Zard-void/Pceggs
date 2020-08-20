@@ -1,6 +1,7 @@
 import time
 from selenium import webdriver
 import json
+import xlwings as xw
 
 def login(driver):
     acount_num = 'qq850224169'
@@ -33,6 +34,8 @@ def login(driver):
     jsonCookies = json.dumps(curCookies)
 
     with open('cookies.txt', 'w') as cookief:
+        cookief.seek(0)
+        cookief.truncate()
         cookief.write(jsonCookies)
     return curCookies
 
@@ -115,14 +118,16 @@ def loginWithCookie(driver):
     return
 
 def Test():
-    driver = webdriver.Chrome()
-    url = 'http://www.pceggs.com/'
-    driver.get(url)
-
+    wb = xw.Book("D:\\Test\\anjian.xlsm")
+    sht0 = wb.sheets[0]
+    value = sht0.range('A1').value
+    print(value)
+    value = sht0.range('A8').value
+    print(value)
 
 
 if __name__ == '__main__':
-    if(1):
+    if(0):
         driver = webdriver.Chrome()
         url = 'http://www.pceggs.com/'
         driver.get(url)
