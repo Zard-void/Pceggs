@@ -1,4 +1,4 @@
-Pceggs : Daily Update and strength the spider
+Pceggs : strength the spider
 
-Data : 2020.08.24
-Description : Daily Update
+Data : 2020.08.26
+Description : support the function of getting information of the first row
