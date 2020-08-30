@@ -1,4 +1,9 @@
 Pceggs : Daily update strength the spider
 
-Data : 2020.08.27
+Data : 2020.08.31
 Description : Daily update
+              Spider V1.0
+                    1.验证码登录
+                    2.cookie登录
+                    3.采集信息
+                    4.投注（有bug）
